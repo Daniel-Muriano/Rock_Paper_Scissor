@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <center>
+        <h1>LET'S PLAY ROCK PAPER AND SCISSORS</h1>
+    Type your choice <input type="text" id="user">
+    <input type="button" value="Enter"onclick="playRound()">
+    </center>
+    
+
+
+  <script>
+    
+    function getPlayerInput(){
+        let playerSelect = document.getElementById("user").value;
+        return playerSelect;
+    }
+
+    function computerPlay() {
+      const random = Math.floor(Math.random() * Math.floor(3));
+    switch(random){
+        case 0:
+        return('Rock');
+        break;
+        case 1:
+        return('Paper');
+        break;
+        case 2:
+        return('Scissor');
+        break;
+    }
+    }
+
+    function playRound() {
+	var p1= getPlayerInput().toUpperCase();
+    var c1= computerPlay().toUpperCase();
+
+    if(p1==c1){
+        alert("It's a tie")
+    }else if(p1=="ROCK" && c1=="SCISSOR"){
+        alert("You win! Rock beats Scissor")
+    }else if(p1=="ROCK" && c1=="PAPER"){
+        alert("You Lose! Paper beats Rock")
+    }else if(p1=="SCISSOR" && c1=="ROCK"){
+        alert("You Lose! Rock beats Scissor")
+    }else if(p1=="SCISSOR" && c1=="PAPER"){
+        alert("You win! Scissor beats Paper")
+    }else if(p1=="PAPER" && c1=="SCISSOR"){
+        alert("You Lose! Scissor beats Paper")
+    }else if(p1=="PAPER" && c1=="ROCK"){
+        alert("You win! Paper beats Rock")
+    }
+    }
+ 
+  </script>
+</body>
+</html>
